@@ -4,7 +4,6 @@
 import sys
 
 from backends.xpad import XboxBackend
-
 from config import default_config_path, load_config
 from hotkeys import EXIT_COMBO, TOGGLE_CANDIDATES, run_hotkey_loop
 from worker import MovementWorker
