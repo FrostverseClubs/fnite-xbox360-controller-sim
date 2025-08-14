@@ -1,5 +1,5 @@
 pyinstaller xpad_app.py `
-  --name XPadToggle-1.0.2 `
+  --name XPadToggle-1.0.3 `
   --onedir --noupx `
   --collect-all vgamepad `
   --add-data "ToggleConfig.ini;." `
@@ -7,4 +7,5 @@ pyinstaller xpad_app.py `
   --version-file version.txt `
   --contents-directory "." `
   --icon ".\XPadToggle.ico" `
+  --manifest app.manifest `
   --noconfirm --clean
