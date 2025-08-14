@@ -24,32 +24,32 @@ class XboxBackend:
         self.neutralize()
         self.update()
 
-    def neutralize(self) -> None:
+    def neutralize(self):
         self.gp.left_joystick_float(0.0, 0.0)
         self.gp.right_trigger_float(0.0)
         self.gp.release_button(button=vg.XUSB_BUTTON.XUSB_GAMEPAD_A)
 
-    def set_left_stick(self, x: float, y: float) -> None:
+    def set_left_stick(self, x: float, y: float):
         self.gp.left_joystick_float(x, y)
 
-    def tap_a(self, hold_seconds: float) -> None:
+    def tap_a(self, hold_seconds: float):
         self.gp.press_button(button=vg.XUSB_BUTTON.XUSB_GAMEPAD_A)
         self.gp.update()
         time.sleep(max(0.0, hold_seconds))
         self.gp.release_button(button=vg.XUSB_BUTTON.XUSB_GAMEPAD_A)
         self.gp.update()
 
-    def pull_rt(self, intensity: float, hold_seconds: float) -> None:
+    def pull_rt(self, intensity: float, hold_seconds: float):
         self.gp.right_trigger_float(intensity)
         self.gp.update()
         time.sleep(max(0.0, hold_seconds))
         self.gp.right_trigger_float(0.0)
         self.gp.update()
 
-    def update(self) -> None:
+    def update(self):
         self.gp.update()
 
-    def close(self) -> None:
+    def close(self):
         try:
             self.neutralize()
             self.update()
